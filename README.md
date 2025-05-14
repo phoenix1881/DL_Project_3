@@ -66,6 +66,11 @@ All attacks use raw pixel gradients for perturbation but normalized inputs for m
 #### Task 4 — Patch PGD (Localized)
 - Perturb only 32×32 region, ε = 0.5
 - Top-1 accuracy: 30.20%
+  
+#### Task 5 — Transferability to DenseNet-121
+
+We evaluated the adversarial datasets on a different pretrained model, DenseNet-121. Despite severely degrading ResNet-34, the adversarial examples transferred poorly: DenseNet retained high Top-1 accuracy (e.g., 56.80% on PGD set), highlighting the model-specific nature of gradient-based attacks.
+
 
 All attacks include visualizations: original image, adversarial image, and amplified perturbation map.
 
