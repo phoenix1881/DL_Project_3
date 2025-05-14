@@ -69,8 +69,13 @@ All attacks use raw pixel gradients for perturbation but normalized inputs for m
   
 #### Task 5 — Transferability to DenseNet-121
 
-We evaluated the adversarial datasets on a different pretrained model, DenseNet-121. Despite severely degrading ResNet-34, the adversarial examples transferred poorly: DenseNet retained high Top-1 accuracy (e.g., 56.80% on PGD set), highlighting the model-specific nature of gradient-based attacks.
+We evaluated the adversarial datasets on a different pretrained model, DenseNet-121. Top-1 accuracy dropped from 76.00% (clean) to:
 
+- 51.20% with FGSM (ε = 0.02)
+
+- 56.80% with PGD (ε = 0.02, α = 0.005, 10 steps)
+
+- 70.00% with Patch PGD (ε = 0.5 in 32×32 region)
 
 All attacks include visualizations: original image, adversarial image, and amplified perturbation map.
 
