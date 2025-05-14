@@ -5,7 +5,7 @@
 
 ---
 
-## 🧠 Overview
+## Overview
 
 This project explores the vulnerability of deep image classifiers to adversarial examples. We attack a pretrained **ResNet-34** model on a 100-class ImageNet subset using three gradient-based methods:
 
@@ -17,7 +17,7 @@ Each attack is designed to be subtle yet effective, reducing classification accu
 
 ---
 
-## 📊 Results Summary
+## Results Summary
 
 | **Attack Type**            | **Top-1 Acc.** | **Top-5 Acc.** | **Top-1 Drop (%)** |
 |----------------------------|----------------|----------------|--------------------|
@@ -30,7 +30,7 @@ All attacks were verified to respect perturbation budgets with runtime ℓ∞ ch
 
 ---
 
-## 📁 Dataset & Preprocessing
+## Dataset & Preprocessing
 
 - **Dataset**: 500 images across 100 ImageNet-1K classes
 - **Format**: Each class stored under its WordNet synset folder
@@ -43,7 +43,7 @@ All attacks use raw pixel gradients for perturbation but normalized inputs for m
 
 ---
 
-## 🧠 Model Architecture & Attacks
+## Model Architecture & Attacks
 
 - **Base Model**: `torchvision.models.resnet34(weights="IMAGENET1K_V1")`
 - **Evaluation Mode**: Inference-only, GPU enabled
@@ -71,7 +71,7 @@ All attacks include visualizations: original image, adversarial image, and ampli
 
 ---
 
-## 🔧 Installation
+## Installation
 
 ```bash
 pip install torch torchvision matplotlib tqdm Pillow
@@ -81,7 +81,7 @@ Or run directly on Google Colab (recommended): upload dataset zip and run dl-pro
 
 ---
 
-## 🧪 Usage
+## Usage
 1. Upload: TestDataSet.zip and extract it in the Colab environment.
 
 2. Run: Execute all cells in dl-project-3.ipynb
@@ -94,7 +94,7 @@ Or run directly on Google Colab (recommended): upload dataset zip and run dl-pro
 
    - Visualizations displayed for 5 sample images per attack
 
-## ⚙️ Configuration (hardcoded in notebook)
+## Configuration (hardcoded in notebook)
 
 -   FGSM: ε = 0.02
     
@@ -102,7 +102,7 @@ Or run directly on Google Colab (recommended): upload dataset zip and run dl-pro
     
 -   Patch PGD: ε = 0.5 (in patch), patch size = 32×32, steps = 10
 
-## 🌟 Conclusion
+## Conclusion
 
 This project highlights how easily production-grade vision models can be "jailbroken" with small, targeted perturbations. We showed:
 
@@ -113,7 +113,7 @@ This project highlights how easily production-grade vision models can be "jailbr
 
 PGD proved most effective, while patch attacks revealed the impact of localized noise. These results support the need for adversarial training and model certification in real-world deployments.
 
-## 📄 Project Report
+## Project Report
 
 The complete AAAI-formatted report is included as `DL_Project_3.pdf`. It covers:
 
@@ -125,7 +125,7 @@ The complete AAAI-formatted report is included as `DL_Project_3.pdf`. It covers:
     
 -   Runtime validation of ε-constraints
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 -   PyTorch & TorchVision for pretrained models and utilities
     
